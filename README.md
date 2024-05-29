@@ -5,7 +5,7 @@
 + npm: 8.19.3
 + vue: 3.4.21
 
-# Step 2: Create an ec2 instance, allow port: 5173 in inbound security
+# Step 2: Create an ec2 instance, allow port: 5173 in inbound security, ubuntu system
 
 # Step 3: Setup Eslactic Ip for ec2 instance
 
