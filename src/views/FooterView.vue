@@ -3,7 +3,7 @@
         <div class="footer-content">
             <div class="footer-column">
                 <h3>About Me</h3>
-                <p>Là một lập trình viên full-stack luôn nổ lực phấn đấu và yêu đời!!!</p>
+                <p>As a full-stack programmer, I always try my best and give my best to achieve the desired results!!!</p>
                 <a href="http://localhost:5173/" target="_blank"><img src="/image/facebook.png" alt="Loading..." srcset=""></a>
                 <a href="https://www.youtube.com/channel/UCwGYfNwPAdHxG3vJSA22SsQ" target="_blank"><img src="/image/youtube.png" alt="Loading..." srcset=""></a>
                 <a href="https://www.linkedin.com/in/thongnguyen123" target="_blank"><img src="/image/linkedin.png" alt="Loading..." srcset=""></a>
@@ -19,9 +19,9 @@
 
             </div>
             <div class="footer-column">
-                <h3>NHẬN THÔNG BÁO</h3>
-                <h4>Đăng kí nhận bài viết mới nhất qua Email</h4>
-                <input type="email" placeholder="Vui lòng nhập email của bạn nhé!!!" 
+                <h3>Notification</h3>
+                <h4>Sign up to receive the latest posts via email!</h4>
+                <input type="email" placeholder="Enter your email!!!" 
                 v-model="email" 
                 required 
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 

@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style scoped>
-.rightMainView {
+/* .rightMainView {
    width: 24%;
    float: left;
    margin-top: 4rem;
@@ -93,12 +93,78 @@ export default {
         height: 30px;
         float: left;
         margin-right: 5px;
-}
+} */
 
-@media (max-width: 1272px) {
+
+    .rightMainView {
+    width: 24%;
+    float: left;
+    margin-top: 4rem;
+    }
+
+    .clear {
+        clear: both;
+    }
+
+    .rightMainView {
+            height: 600px;
+            margin-left: 3px;
+        }
+
+    .rightMainView ul li {
+            font-size: 18px;
+            padding: 5px;
+        }
+
+    .rightMainView ul li a {
+            text-decoration: none;
+            color: #000;
+        }
+
+    .rightMainView ul li:hover {
+        cursor: pointer;
+        color: #d3ad7f;
+    }
+
+    .article-thumbnail img {
+            width: 30px;
+            height: 30px;
+            float: left;
+            margin-right: 5px;
+    }
+
+
+
+@media (max-width: 1024px) {
     .rightMainView {
         width: 100%;
         margin-top: 1rem;
+    }
+
+    .rightMainView {
+        height: 300px;
+    }
+
+    .rightMainView h2 {
+        text-align: center;
+    }
+
+    .rightMainView ul li {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .rightMainView {
+        height: 300px;
+    }
+
+    .rightMainView h2 {
+        text-align: center;
+    }
+
+    .rightMainView ul li {
+        text-align: center;
     }
 }
 

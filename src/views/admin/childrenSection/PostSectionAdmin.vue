@@ -5,6 +5,10 @@
 <template>
   <main id="sample">
     <input type="text" placeholder="Tiêu đề của bài viết..." class="title-post-admin" v-model="title">
+    <div class="file">
+       <label for="">Chọn ảnh đại diện cho tin tức:</label>
+       <input type="file" name="" id="">
+    </div>
     <Editor
       api-key="muq3ewk9282l1n7wrp7xu3wmreb9h9xyekl5ep63f1m7sgou"
       :init="{
@@ -53,6 +57,26 @@ export default {
     flex-direction: column;
     place-items: center;
     width: 75%;
+    margin-top: 4rem;
+  }
+
+  #sample input {
+    margin-bottom: 1rem;
+    width: 40rem;
+    font-size: 1rem;
+  }
+
+  .file {
+    display: flex;
+  }
+
+  .file label {
+    flex: 1 1 30%;
+    margin-left: 3rem;
+  }
+
+  .file input {
+    flex: 1 1 70%;
   }
 
   .btn-send-admin-content {

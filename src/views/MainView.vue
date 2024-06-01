@@ -1,7 +1,7 @@
 <template>
     <div class="main-view">
         <div class="img-introduce-main-view">
-            <div class="chatbox">
+            <!-- <div class="chatbox">
                 <img v-on:click="displayChatBox" src="/image/chatbox.png" alt="chatbox" srcset="">
                 <span class="hover-text">Chat AI Bot!</span>
                     <div class="input-chat" v-if="isInputChat">
@@ -13,44 +13,15 @@
                             <div class="message me">Chào bạn, tôi có thể giúp gì cho bạn?</div>
                             <div class="message other">Tôi cần thông tin về sản phẩm của bạn.</div>
                             <div class="message me">Sản phẩm của chúng tôi bao gồm...</div>
-                            <!-- Thêm tin nhắn mới tại đây -->
                         </div>
 
-                    <input type="text" name="" id="" class="input-text-chat">
-                    <button type="submit" class="btn-chat-send">Send</button>
-                </div>
-            </div>
+                        <input type="text" name="" id="" class="input-text-chat">
+                        <button type="submit" class="btn-chat-send">Send</button>
+                    </div>
+            </div> -->
             <img src="/image/chanDung.jpg" alt="" srcset="">
         </div>
         <div class="right-main-view">
-            <!-- <article class="introduce">
-                Tôi là Nguyễn Văn Thông, là một lập trình viên Full Stack Developer tại Trường Đại học Giao thông Vận tải Thành Phố HCM. 
-                Ngành tôi học là Công nghệ thông tin tại Trường, tôi đang theo mảng website.
-            </article>
-
-            <article class="skill">
-                <h3>Skill:</h3>
-                <p>Front-end: Html, css, bootstrap, javascript, jqurey, react js, vue js</p>
-                <p>Back-end: Node js, Express Js, Php. Laravel, Wordpress, Java, Spring, Python cơ bản</p>
-                <p>Database: Mysql, Mongo DB</p>
-            </article>
-
-            <article class="experience">
-                <h3>Kinh nghiệm làm việc:</h3>
-                <p>Công ty thiết kế Web: Nina từ tháng 06/2023 - 12/2023</p>
-                <p>Vị trí công việc: Sales Website</p>
-                <p>Mô tả công việc: Tìm kiếm khách hàng, tư vấn cho khách hàng về cách thức tragn web hoạt động, hiệu quả của nó...</p>
-                <br>
-                <p>Công ty phần mềm: Alta Software từ tháng 09/2022 - 12/2022</p>
-                <p>Vị trí công việc: Thực tập sinh backend PHP</p>
-                <p>Mô tả công việc: Hoàn thành các tasks được giao</p>
-            </article>
-
-            <article class="interest">
-                <h3>Sở thích:</h3>
-                <p>Đá bóng, đọc sách, chơi game, code...</p>
-            </article> -->
-
             <article class="introduce">
                 <h1>Hello. My name is Thong!</h1>
                 <p>I am a Software Developer!</p>
@@ -76,25 +47,54 @@ export default {
 </script>
 
 <style scoped>
-.main-view {
+/* .main-view {
     width: 75%;
     float: left;
     margin-top: 4rem;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 45%;
 }
 
 .main-view .img-introduce-main-view {
-    /* position: relative;
+    height: 50rem;
+    overflow: hidden;
+}
+
+.main-view .img-introduce-main-view img {
+    width: 100%;
+    height: auto;
+}
+
+.main-view .right-main-view {
+    height: 50rem;
+}
+
+.main-view .right-main-view .introduce {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50rem;        
+}
+
+.main-view .right-main-view .introduce h1 {
+    font-size: 4rem;
+}
+
+.main-view .right-main-view .introduce p {
+    font-size: 2rem;
+} */
+
+/* .main-view .img-introduce-main-view {
+    position: relative;
     width: 40%;
-    float: left; */
-    position: relative; /* Đặt đặt để đặt vị trí tương đối của nó so với vị trí ban đầu, ta có thể thay đổi top, bottom, right, left của nó để dịch chuyển mà các ptu khác không thay đổi vị trí */
-    width: 40%;  /* Đặt chiều rộng của container */
-    height: 40rem; /* Đặt chiều cao của container */
+    height: 40rem; 
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Ngăn các thành phần vượt ra ngoài container */
+    overflow: hidden; 
+    float: left;
         
 }
 
@@ -105,7 +105,7 @@ export default {
     left: 50%;
     width: 150%;
     height: 150%;
-    background-color: #d3ad7f80; /* Màu của vòng tròn */
+    background-color: #d3ad7f80;
     border-radius: 50%;
     transform: translate(-50%, -50%) scale(0);
     animation: pulse 2s infinite ease-out;
@@ -127,28 +127,20 @@ export default {
 }
 
 .main-view .img-introduce-main-view img {
-    /* width: 100%;
-    height: 25rem;
+    width: 80%;
+    height: 80%;
     border-radius: 50%;
     position: relative;
-    justify-content: center;
-  align-items: center; */
-  width: 80%;
-  height: 80%;
-  border-radius: 50%; /* Tạo viền tròn */
-  position: relative;
-  z-index: 1;
+    z-index: 1;
 }
 
 .right-main-view {
-    width: 55%;
-    margin-top: 2rem;
-    margin-left: 1rem;
-  
+    width: 100%;
 }
 
 .right-main-view .introduce {
-    margin-left: 10%;
+    margin-left: -10rem;
+    margin-top: 3rem;
 }
 
 .right-main-view .introduce h1 {
@@ -168,25 +160,24 @@ export default {
 .main-view .img-introduce-main-view .chatbox img {
     width: 5rem;
     height: 5rem;
-    transition: opacity 0.3s; /* Hiệu ứng làm mờ nhẹ khi hover */
+    transition: opacity 0.3s; 
 }
 
 .main-view .img-introduce-main-view .chatbox img:hover {
-    opacity: 0.3;        /* Làm mờ ảnh khi hover */
+    opacity: 0.3;       
 }
 
 .main-view .img-introduce-main-view .chatbox .hover-text {
 
-  transform: translate(-50%, -50%); /* Canh giữa văn bản */
-  color: #131313;        /* Màu chữ */
-  font-size: 15px;     /* Kích thước chữ */
-  opacity: 0;          /* Làm cho văn bản không hiện lúc ban đầu */
-  transition: opacity 0.3s; /* Hiệu ứng hiện ra khi hover */
-  pointer-events: none; /* Đảm bảo chuột có thể 'click through' văn bản */
+  transform: translate(-50%, -50%); 
+  font-size: 15px;     
+  opacity: 0;          
+  transition: opacity 0.3s; 
+  pointer-events: none; 
 }
 
 .main-view .img-introduce-main-view .chatbox:hover .hover-text {
-    opacity: 1;          /* Hiển thị văn bản khi hover */
+    opacity: 1;        
 }
 
 .main-view .img-introduce-main-view .chatbox .input-chat {
@@ -194,7 +185,6 @@ export default {
     height: 25rem;
     border: .1rem solid #131313;
     background-color: aliceblue;
-    /* opacity: 0; */
     position: absolute;
     top: 5rem; left: 4rem;
 }
@@ -235,33 +225,167 @@ export default {
 
 .me {
     align-self: flex-end;
-    background-color: #0b93f6;  /* Màu xanh */
+    background-color: #0b93f6;  
 }
 
 .other {
     align-self: flex-start;
-    background-color: #e5e5ea;  /* Màu xám */
+    background-color: #e5e5ea; 
     color: black;
-}
+} */
 
-@media (max-width: 1272px) {
+/* @media (max-width: 1272px) {
     .main-view {
         width: 100%;
     }
+}
 
+@media (max-width: 1000px) {
     .main-view .img-introduce-main-view {
         width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .main-view .img-introduce-main-view img {
-        width: 80%;
-        height: 80%;
+        float: none;
     }
 
     .right-main-view {
         width: 100%;
+        float: left;
+    }
+
+    .right-main-view .introduce {
+        margin-left: 25rem;
+        margin-top: 15rem;
+    }
+
+    .right-main-view .introduce h1 {
+        font-size: 3rem;
+    }
+
+    .right-main-view .introduce p {
+        font-size: 2rem;
     }
 }
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+
+} */
+@media (min-width: 1025px) {
+    .main-view {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 3rem;
+        float: left;
+        width: 75%;
+        border-right: 1px solid #333;
+    }
+
+    .main-view .img-introduce-main-view {
+        flex: 1 1 45%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-view .img-introduce-main-view img {
+        height: 40rem;
+        width: 100%;
+    }
+
+    .main-view .right-main-view {
+        flex: 1 1 45%;
+    }
+
+    .main-view .right-main-view .introduce {
+        
+    }
+
+    .main-view .right-main-view .introduce h1 {
+       text-align: center;
+       margin-top: 10rem;
+       font-size: 3rem;
+    }
+
+    .main-view .right-main-view .introduce p {
+      text-align: center;
+      font-size: 2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .main-view {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .main-view .img-introduce-main-view {
+        flex: 1 1 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-view .img-introduce-main-view img {
+        height: 40rem;
+        width: 100%;
+    }
+
+    .main-view .right-main-view {
+        flex: 1 1 100%;
+    }
+
+    .main-view .right-main-view .introduce {
+        
+    }
+
+    .main-view .right-main-view .introduce h1 {
+       text-align: center;
+    }
+
+    .main-view .right-main-view .introduce p {
+      text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-view {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 3rem;
+    }
+
+    .main-view .img-introduce-main-view {
+        flex: 1 1 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .main-view .img-introduce-main-view img {
+        height: 30rem;
+        width: 100%;
+    }
+
+    .main-view .right-main-view {
+        flex: 1 1 100%;
+    }
+
+    .main-view .right-main-view .introduce {
+        
+    }
+
+    .main-view .right-main-view .introduce h1 {
+       text-align: center;
+    }
+
+    .main-view .right-main-view .introduce p {
+      text-align: center;
+    }
+
+}
+
 </style>

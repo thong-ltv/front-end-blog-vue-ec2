@@ -2,15 +2,16 @@
   <header>
       <div class="nav-container" >
         <div class="nav-logo">
-          <router-link to="/" class="nav-logo-link"><h1>Nguyễn Văn Thông - Full Stack Developer</h1></router-link>
+          <router-link to="/" class="nav-logo-link"><img src="/image/logo.png" alt="logo"></router-link>
         </div>
         
-        <div class="nav-menu">
+        <div class="nav-menu" @click="hiddenNavMenu">
           <ul class="nav-links">
-          <li><router-link to="/" class="nav-link-router">Trang chủ</router-link></li>
-          <li><a :href="`/user/posts/${latestPostId}`" class="nav-link-router">Bài viết</a></li>
-          <li><router-link to="/user/about" class="nav-link-router">Tôi là ai?</router-link></li>
-          <li><router-link to="/user/contact" class="nav-link-router">Liên hệ</router-link></li>
+          <li ><router-link to="/" class="nav-link-router">Home</router-link></li>
+          <li ><a :href="`/user/posts/${latestPostId}`" class="nav-link-router">Blog</a></li>
+          <!-- <li ><router-link to="/user/about" class="nav-link-router">Resume</router-link></li> -->
+          <li><a href="https://www.topcv.vn/xem-cv/WgtaCF0BXVBTV1JRVgRVVg0EAF0HA1FXCFoEAQ4783" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li ><router-link to="/user/contact" class="nav-link-router">Contact</router-link></li>
           </ul>
         </div>
 
@@ -49,6 +50,13 @@ export default {
   },
 
   methods: {
+    hiddenNavMenu () {
+      let navMenu = document.querySelector('.nav-menu');
+
+      navMenu.classList.remove('active');
+
+    },
+
     displayNavMenu () {
       let navMenu = document.querySelector('.nav-menu');
 
@@ -73,6 +81,11 @@ export default {
 
 .nav-container .nav-logo .nav-logo-link {
    text-decoration: none;
+}
+
+.nav-container .nav-logo .nav-logo-link img {
+  width: 5rem;
+  height: 5rem;
 }
 
 .nav-container .nav-logo h1 {
@@ -135,13 +148,14 @@ export default {
       right: 0;
     }
 
+    .nav-container .nav-menu.active-hidden {
+      right: -200%;
+    }
+
     .nav-container .nav-menu ul {
       display: block;
       margin-right: 65%;
       margin-left: -10%;
-    }
-
-    .nav-container .nav-menu ul li {
     }
 
     .nav-container .nav-menu ul li a:hover {
@@ -150,11 +164,33 @@ export default {
 }
 
 @media (max-width: 768px) {
-
+  .nav-container .nav-logo .nav-logo-link img {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 480px) {
 
+  .nav-container .nav-menu {
+    position: absolute;
+      top: 100%; right: -200%;
+      width: 13rem;
+      height: calc(100vh - 35rem);
+  }
+
+  .nav-container .nav-menu ul {
+      margin-right: 45%;
+    }
+
+  .nav-container .nav-logo .nav-logo-link img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .nav-container .nav-menu ul li a {
+    font-size: .9rem;
+  }
 }
 
 </style>

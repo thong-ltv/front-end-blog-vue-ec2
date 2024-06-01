@@ -11,22 +11,53 @@
 <style>
 .contact-view-user {
     width: 100%;
-    height: 35rem;
-    float: left;
+    max-width: 600px; /* Điều chỉnh độ rộng tối đa của phần tử */
+    margin: 0 auto; /* Canh giữa */
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 3rem;
+    height: 40rem;
+    justify-items: center;
     text-align: center;
 }
 
 .contact-view-user h3 {
-  margin-top: 20%;
+    margin-top: 10rem;
 }
 
 .btn-contact {
-  font-size: 25px;
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 3px;
-  text-decoration: none;
-  color: red;
-  font-weight: bold;
+    display: block;
+    width: 100%;
+    max-width: 200px; /* Điều chỉnh độ rộng tối đa của nút */
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+
+.btn-contact:hover {
+    background-color: #0056b3;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-view-user {
+        padding: 10px;
+    }
+
+    .contact-view-user h3 {
+        font-size: 1rem;
+    }
+
+    .btn-contact {
+        max-width: 150px;
+        padding: 8px;
+    }
+}
+
+
+
 </style>

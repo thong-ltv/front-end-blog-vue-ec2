@@ -51,7 +51,7 @@ const store = createStore({
   actions: {
     fetchData({ commit }) {
       axios
-        .get("http://localhost:3000/api/post")
+        .get("http://44.198.78.243:3000/api/post")
         .then((response) => {
           commit("setData", response.data.data);
         })
@@ -62,7 +62,7 @@ const store = createStore({
 
     fetchItemById({ commit }, id) {
       axios
-        .get("http://localhost:3000/api/post")
+        .get("http://44.198.78.243:3000/api/post")
         .then((response) => {
           const item = response.data.data.find((item) => item._id === id);
           commit("setItemFindById", item.content);
@@ -72,7 +72,7 @@ const store = createStore({
 
     fetchItemByIdTitle({ commit }, id) {
       axios
-        .get("http://localhost:3000/api/post")
+        .get("http://44.198.78.243:3000/api/post")
         .then((response) => {
           const item = response.data.data.find((item) => item._id === id);
           commit("setItemFindByIdTitle", item.title);
@@ -82,7 +82,7 @@ const store = createStore({
 
     fetchLatestPostId({ commit }) {
       axios
-        .get("http://localhost:3000/api/post")
+        .get("http://44.198.78.243:3000/api/post")
         .then((response) => {
           const item = response.data.data[response.data.data.length - 1];
           commit("setLatestPostId", item._id);
