@@ -10,7 +10,7 @@
           <li ><router-link to="/" class="nav-link-router">Home</router-link></li>
           <li ><a :href="`/user/posts/${latestPostId}`" class="nav-link-router">Blog</a></li>
           <!-- <li ><router-link to="/user/about" class="nav-link-router">Resume</router-link></li> -->
-          <li><a href="https://www.topcv.vn/xem-cv/WgtaCF0BXVBTV1JRVgRVVg0EAF0HA1FXCFoEAQ4783" target="_blank" rel="noopener noreferrer">Resume</a></li>
+          <li><a href="https://www.topcv.vn/xem-cv/CgABAFtcWAxTCVBcVgFWD1VUDA0GBVcHAVVRXg6f24" target="_blank" rel="noopener noreferrer">Resume</a></li>
           <li ><router-link to="/user/contact" class="nav-link-router">Contact</router-link></li>
           </ul>
         </div>

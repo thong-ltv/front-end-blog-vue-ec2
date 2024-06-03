@@ -8,6 +8,7 @@ const store = createStore({
       data: [],
       itemFindByIdContent: "",
       itemFindByIdTitle: "",
+      itemFindbyIdFile: "",
       latestPostId: "",
     };
   },
@@ -23,6 +24,10 @@ const store = createStore({
 
     dataItemByIdTitle(state) {
       return state.itemFindByIdTitle;
+    },
+
+    dataItemByIdFile(state) {
+      return state.itemFindbyIdFile;
     },
 
     getLatestPostId(state) {
@@ -41,6 +46,10 @@ const store = createStore({
 
     setItemFindByIdTitle(state, payload) {
       state.itemFindByIdTitle = payload;
+    },
+
+    setItemFindByIdFile(state, payload) {
+      state.itemFindbyIdFile = payload;
     },
 
     setLatestPostId(state, payload) {
@@ -76,6 +85,16 @@ const store = createStore({
         .then((response) => {
           const item = response.data.data.find((item) => item._id === id);
           commit("setItemFindByIdTitle", item.title);
+        })
+        .catch((error) => console.error("Fetch error: ", error));
+    },
+
+    fetchItemByIdFile({ commit }, id) {
+      axios
+        .get("http://44.198.78.243:3000/api/post")
+        .then((response) => {
+          const item = response.data.data.find((item) => item._id === id);
+          commit("setItemFindByIdFile", item.file);
         })
         .catch((error) => console.error("Fetch error: ", error));
     },

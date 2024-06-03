@@ -3,12 +3,11 @@
 </script>
 
 <template>
+<form @submit.prevent="submitData">
   <main id="sample">
-    <input type="text" placeholder="Tiêu đề của bài viết..." class="title-post-admin" v-model="title">
-    <div class="file">
-       <label for="">Chọn ảnh đại diện cho tin tức:</label>
-       <input type="file" name="" id="">
-    </div>
+    <input type="text" placeholder="Tiêu đề của bài viết..." class="title-post-admin" v-model="title" required>
+    <label for="">Chọn ảnh đại diện cho tin tức:</label>
+    <input type="file" name="file" id="" ref="inputFile" required>
     <Editor
       api-key="muq3ewk9282l1n7wrp7xu3wmreb9h9xyekl5ep63f1m7sgou"
       :init="{
@@ -17,10 +16,11 @@
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
       }"
       v-model="content"
+      aria-required="enter your content!"
     />
   </main>
-  <button @click="submitData" class="btn-send-admin-content">Gửi</button>
-
+  <button class="btn-send-admin-content" type="submit">Gửi</button>
+</form>
 </template>
 
 <script>
@@ -31,13 +31,29 @@ export default {
         return {
             title: '',
             content: '',
+            file: null
         }
     },
     methods: {
+
+        // handleFileUpload(event) {
+        //   this.file = event.target.file[0];
+        //   console.log("thong");
+        // },
+
         submitData() {
-            axios.post('http://localhost:3000/api/post', {
-                content: this.content,
-                title: this.title
+         
+            this.file = this.$refs.inputFile.files[0];
+            
+            const formData = new FormData();
+            formData.append('title', this.title);
+            formData.append('content', this.content);
+            formData.append('file', this.file);
+
+            axios.post('http://localhost:3000/api/post', formData, {
+                headers: {
+                  'Content-Type' : 'multipart/form-data'
+                }
             })
             .then(response => {
                 console.log('data sent success');
