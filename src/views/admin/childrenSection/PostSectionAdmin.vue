@@ -50,7 +50,7 @@ export default {
             formData.append('content', this.content);
             formData.append('file', this.file);
 
-            axios.post('http://localhost:3000/api/post', formData, {
+            axios.post('http://44.198.78.243:3000/api/post', formData, {
                 headers: {
                   'Content-Type' : 'multipart/form-data'
                 }
