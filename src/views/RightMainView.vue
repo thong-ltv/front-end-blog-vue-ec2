@@ -1,6 +1,6 @@
 <template>
     <div class="rightMainView" id="right-main-view-id" v-if="!($route.path.includes('/admin') || $route.path.includes('/about') || $route.path.includes('/contact'))">
-        <h2>Bài viết mới nhất</h2>
+        <h2>Latest Posts</h2>
         <ul>
             <li v-for="(item, index) in lastThreeItemValues" :key="index" >
                 <a :href="`/user/posts/${item._id}`" v-html="item.title"></a>
