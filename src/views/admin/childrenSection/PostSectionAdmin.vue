@@ -11,12 +11,13 @@
     <Editor
       api-key="muq3ewk9282l1n7wrp7xu3wmreb9h9xyekl5ep63f1m7sgou"
       :init="{
+        selector: 'textarea',
         toolbar_mode: 'sliding',
         plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount',
         toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        content_css: '/src/assets/tinymce.css',
       }"
       v-model="content"
-      aria-required="enter your content!"
     />
   </main>
   <button class="btn-send-admin-content" type="submit">Gửi</button>
@@ -50,7 +51,7 @@ export default {
             formData.append('content', this.content);
             formData.append('file', this.file);
 
-            axios.post('http://localhost:3000/api/post', formData, {
+            axios.post('http://44.198.78.243:3000/api/post', formData, {
                 headers: {
                   'Content-Type' : 'multipart/form-data'
                 }

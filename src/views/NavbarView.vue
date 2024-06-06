@@ -8,7 +8,7 @@
         <div class="nav-menu" @click="hiddenNavMenu">
           <ul class="nav-links">
           <li ><router-link to="/" class="nav-link-router">Home</router-link></li>
-          <li ><a :href="`/user/posts/${latestPostId}`" class="nav-link-router">Blog</a></li>
+          <li ><a :href="`/user/posts/${latestPostId}/${latestSlug}`" class="nav-link-router">Blog</a></li>
           <!-- <li ><router-link to="/user/about" class="nav-link-router">Resume</router-link></li> -->
           <li><a href="https://www.topcv.vn/xem-cv/CgABAFtcWAxTCVBcVgFWD1VUDA0GBVcHAVVRXg6f24" target="_blank" rel="noopener noreferrer">Resume</a></li>
           <li ><router-link to="/user/contact" class="nav-link-router">Contact</router-link></li>
@@ -26,19 +26,28 @@ export default {
   data() {
     return {
       items: [],
-      latestPostId: ''
+      latestPostId: '',
+      latestSlug: ''
     };
   },
 
   computed: {
     getLatestPostId () {
       return this.$store.getters['getLatestPostId'];
+    },
+
+    getLatestSlug() {
+      return this.$store.getters['getLatestSlug'];
     }
   },
 
   watch: {
     getLatestPostId(newVal) {
       this.latestPostId = newVal;
+    },
+
+    getLatestSlug(newVal) {
+      this.latestSlug = newVal;
     }
   },
 

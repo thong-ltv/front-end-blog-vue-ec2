@@ -31,7 +31,15 @@
 </template>
 
 <script>
+import { useHead } from '@vueuse/head'
+
 export default {
+    setup() {
+        useHead({
+            title: 'Home'
+        });
+    },
+
     data() {
         return {
             isInputChat : false,

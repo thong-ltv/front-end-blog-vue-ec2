@@ -10,6 +10,7 @@ const store = createStore({
       itemFindByIdTitle: "",
       itemFindbyIdFile: "",
       latestPostId: "",
+      latestSlug: "",
     };
   },
 
@@ -33,6 +34,10 @@ const store = createStore({
     getLatestPostId(state) {
       return state.latestPostId;
     },
+
+    getLatestSlug(state) {
+      return state.latestSlug;
+    },
   },
 
   mutations: {
@@ -54,6 +59,10 @@ const store = createStore({
 
     setLatestPostId(state, payload) {
       state.latestPostId = payload;
+    },
+
+    setLatestSlug(state, payload) {
+      state.latestSlug = payload;
     },
   },
 
@@ -105,6 +114,7 @@ const store = createStore({
         .then((response) => {
           const item = response.data.data[response.data.data.length - 1];
           commit("setLatestPostId", item._id);
+          commit("setLatestSlug", item.slug);
         })
         .catch((error) => console.error("Fetch error: ", error));
     },

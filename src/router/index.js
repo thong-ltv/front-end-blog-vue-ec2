@@ -13,7 +13,6 @@ const router = createRouter({
     //router cho users
     {
       path: "/user",
-      name: "user",
       component: () => import("../views/user/MainUserView.vue"),
       children: [
         {
@@ -27,7 +26,7 @@ const router = createRouter({
           component: () => import("../views/user/ContactUserView.vue"),
         },
         {
-          path: "posts/:id",
+          path: "posts/:id/:slug",
           name: "user_posts",
           component: () => import("../views/user/PostUserView.vue"),
         },

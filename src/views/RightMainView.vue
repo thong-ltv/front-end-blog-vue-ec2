@@ -3,7 +3,7 @@
         <h2>Latest Posts</h2>
         <ul>
             <li v-for="(item, index) in lastThreeItemValues" :key="index" >
-                <a :href="`/user/posts/${item._id}`" v-html="item.title"></a>
+                <a :href="`/user/posts/${item._id}/${item.slug}`" v-html="item.title"></a>
             </li>
         </ul>
     </div>

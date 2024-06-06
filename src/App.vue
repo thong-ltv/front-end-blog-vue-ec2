@@ -13,10 +13,10 @@ import MainView from './views/MainView.vue';
 import RightMainView from './views/RightMainView.vue';
 import FooterView from './views/FooterView.vue';
 
-document.addEventListener('copy', function(e) {
-      e.preventDefault();
-      alert('Không thể sao chép nội dung này!');
-    });
+    // document.addEventListener('copy', function(e) {
+    //   e.preventDefault();
+    //   alert('Không thể sao chép nội dung này!');
+    // });
     document.addEventListener('cut', function(e) {
       e.preventDefault();
       alert('Không thể cắt nội dung này!');

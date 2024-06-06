@@ -3,7 +3,15 @@
     <router-view></router-view>
 </template>
 
-<script>
+<script setup>
+import { useHead } from '@vueuse/head'
+
+useHead({
+    title: 'Home'
+});
+
+
+
 
 </script>-
 

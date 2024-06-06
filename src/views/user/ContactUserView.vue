@@ -5,7 +5,13 @@
     </div>
 </template>
 
-<script>
+<script setup>
+import { useHead } from '@vueuse/head'
+
+useHead({
+    title: 'Contact'
+});
+
 </script>
 
 <style>

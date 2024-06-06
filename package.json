@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@tinymce/tinymce-vue": "^5.1.1",
+    "@vueuse/head": "^2.0.0",
     "axios": "^1.6.8",
     "dompurify": "^3.1.1",
     "googleapis": "^136.0.0",
     "multer": "^1.4.5-lts.1",
     "vue": "^3.4.21",
+    "vue-meta": "^3.0.0-alpha.7",
     "vue-router": "^4.3.0",
     "vuex": "^4.0.2"
   },
